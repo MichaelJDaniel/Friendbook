@@ -1,0 +1,22 @@
+<div class="ui card">
+  <div class="image">
+    <img src="https://robohash.org/<%= @person.avatar %>?set=set4" />
+  </div>
+  <div class="content">
+    <p class="header">
+      <%= @person.first_name %> <%= @person.last_name %>
+    </p>
+
+
+
+  <div class="meta">
+    <span class="date"><%= @person.phone %></span>
+  </div>
+  <div class="description">
+    <%= @person.email %>
+  </div>
+  <div class="extra content">
+    <%= link_to "Edit", edit_person_path(@person) %>
+    <%= link_to "View People", people_path%>
+  </div>
+</div>

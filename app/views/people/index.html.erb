@@ -1,0 +1,28 @@
+<h1 class="ui header">People</h1>
+<%= link_to "New Person", new_person_path %>
+<div class="ui divider"></div>
+
+<div class="ui grid">
+  <% @people.each do |person| %>
+    <div class="sixteen wide mobile eight tablet four wide computer column">
+      <div class="ui card">
+        <div class="image">
+          <img src="https://robohash.org/<%= person.avatar %>?set=set4" />
+        </div>
+        <div class="content">
+          <%= link_to "#{person.first_name} #{person.last_name}", person, class: "header" %>
+        </div>
+        <div class="extra content">
+          <div class="ui two buttons">
+            <div class="ui green button">
+              <%= link_to "Edit", edit_person_path(person) %>
+            </div>
+            <div class="ui red button">
+              <%= link_to "Delete", person_path(person), method: :delete %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
